@@ -1,4 +1,4 @@
-package com.example.finalassignment_ps;
+package com.example.finalassignment_ps.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +9,9 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.example.finalassignment_ps.model.Key;
+import com.example.finalassignment_ps.model.SoundPlayer;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.finalassignment_ps;
+package com.example.finalassignment_ps.model;
 
 import android.graphics.RectF;
 

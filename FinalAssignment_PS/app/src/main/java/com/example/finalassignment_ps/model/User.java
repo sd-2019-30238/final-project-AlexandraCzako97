@@ -1,4 +1,4 @@
-package com.example.finalassignment_ps;
+package com.example.finalassignment_ps.model;
 
 public class User {
     private String username;

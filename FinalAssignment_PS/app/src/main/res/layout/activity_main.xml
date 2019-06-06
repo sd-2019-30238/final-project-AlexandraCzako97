@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.finalassignment_ps.PianoView
+    <com.example.finalassignment_ps.view.PianoView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

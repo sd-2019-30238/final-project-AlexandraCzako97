@@ -1,4 +1,4 @@
-package com.example.finalassignment_ps;
+package com.example.finalassignment_ps.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -47,9 +47,23 @@ public class DatabaseConfig extends SQLiteOpenHelper {
     }
 
     public boolean getUserData(String username) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from table where column = ?",new String[]{"data"});
+        User movieDetails = new User();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COL_2, COL_3};
+        String selection = COL_2 + " = ?";
+        String[] selectionArgs = {String.valueOf(username)};
 
+
+        Cursor cursor = db.query(TABLE_NAME, columns, selection,
+                selectionArgs, null, null, null);
+        if (null != cursor) {
+            cursor.moveToFirst();
+            movieDetails.setUsername(cursor.getString(0));
+            movieDetails.setPassword(cursor.getString(1));
+            return true;
+        }
+        db.close();
+        return false;
     }
 
     public boolean updateData(String id,String username,String password) {

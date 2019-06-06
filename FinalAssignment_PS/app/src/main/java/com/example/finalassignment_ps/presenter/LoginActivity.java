@@ -1,22 +1,16 @@
-package com.example.finalassignment_ps;
+package com.example.finalassignment_ps.presenter;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.os.AsyncTask;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import com.example.finalassignment_ps.R;
+import com.example.finalassignment_ps.model.DatabaseConfig;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -49,7 +43,22 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-//to check the data in the database use the code below
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean res = myDb.getUserData(username.getText().toString());
+                if (res == true) {
+                    Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else
+                    Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+    //to check the data in the database use the code below
         /*login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,22 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     }*/
 
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int res = myDb.getUserData(username.getText().toString());
-                if (res == 0) {
-                    showMessage("Error", "User not found");
-                    return;
-                }else{
-                    showMessage("Error","User found");
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
 
-
-            }
-        });
     }
 
     private void showMessage(String error, String Message) {
