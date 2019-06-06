@@ -46,12 +46,12 @@ public class DatabaseConfig extends SQLiteOpenHelper {
         return res;
     }
 
-    public boolean getUserData(String username) {
+    public boolean getUserData(String username, String password) {
         User movieDetails = new User();
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {COL_2, COL_3};
-        String selection = COL_2 + " = ?";
-        String[] selectionArgs = {String.valueOf(username)};
+        String selection = COL_2 + " = ? and "+ COL_3+" = ?";
+        String[] selectionArgs = {String.valueOf(username),String.valueOf(password)};
 
 
         Cursor cursor = db.query(TABLE_NAME, columns, selection,

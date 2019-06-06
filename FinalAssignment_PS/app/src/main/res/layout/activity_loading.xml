@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenter.LoadingActivity"
+    android:background="@drawable/loading">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="401dp">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginBottom="-300dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="Even the sky is not the limit."
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="Play infinitely!"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="-200dp"
+            android:src="@drawable/piano_png" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

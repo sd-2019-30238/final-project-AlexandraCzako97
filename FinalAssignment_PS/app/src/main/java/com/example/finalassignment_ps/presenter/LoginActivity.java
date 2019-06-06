@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean res = myDb.getUserData(username.getText().toString());
+                boolean res = myDb.getUserData(username.getText().toString(),password.getText().toString());
                 if (res == true) {
                     Toast.makeText(LoginActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
